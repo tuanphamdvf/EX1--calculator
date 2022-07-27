@@ -1,10 +1,10 @@
-
-*{
+* {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-.main{
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,14 +14,15 @@
 
 }
 
-.title{
+.title {
     font-size: 32px;
     flex-grow: 1;
     margin-top: 24px;
-    color:  rgba(44, 19, 206, 0.869);
+    color: rgba(44, 19, 206, 0.869);
 }
-.calculator{
-    width:450px;
+
+.calculator {
+    width: 430px;
     height: 500px;
     background: white;
     display: flex;
@@ -31,7 +32,8 @@
     align-items: center;
 
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
     flex-grow: 2;
     display: flex;
@@ -39,25 +41,28 @@
     flex-direction: column;
 
 }
+
 .calculator__keys {
-    width:100%;
+    width: 100%;
     padding: 8px;
-    margin-left: 8px;
-    
+    margin-left: 16px;
+
 }
-.calculator__display{
-    width:92%;
-    border:1px solid white;
-    padding:5px 7px;
-    text-align:right;
-    border-radius:4px;
+
+.calculator__display {
+    width: 92%;
+    border: 1px solid white;
+    padding: 5px 7px;
+    text-align: right;
+    border-radius: 4px;
     margin-left: 16px;
     font-size: 24px;
 }
-div button{
-    width:23%;
-    height:46px;
-    margin-top:5px;
+
+div button {
+    width: 23%;
+    height: 46px;
+    margin-top: 5px;
     display: inline-block;
     cursor: pointer;
     background: linear-gradient(90deg, rgb(100, 145, 205) 0%, rgb(14, 123, 200) 100%);
@@ -65,17 +70,15 @@ div button{
     border-radius: 16px;
     border: solid white;
     font-size: 18px;
-    
+
 }
-div button:active{
+
+div button:active {
     background: linear-gradient(90deg, rgb(76, 122, 182) 0%, rgb(2, 58, 98) 100%);
 }
-div .key--equal{
-    height:200px;
-    float:right;
-    margin-right:22px;
-}
-.error{
-    margin-bottom: 8px;
-    color:  rgba(44, 19, 206, 0.869); 
+
+div .key--equal {
+    height: 200px;
+    float: right;
+    margin-right: 32px;
 }
