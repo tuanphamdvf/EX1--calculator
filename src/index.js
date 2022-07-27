@@ -4,6 +4,7 @@ const display = document.querySelector(".calculator__display");
 const error = document.querySelector(".error");
 let preTypes;
 let num1;
+let num2;
 let operator;
 
 keys.addEventListener("click", (e) => {
@@ -16,7 +17,11 @@ keys.addEventListener("click", (e) => {
 
     // check if  input value is number
     if (!action) {
-      if (displayedNum === "0" || preTypes === "operator" || preTypes ==='result') {
+      if (
+        displayedNum === "0" ||
+        preTypes === "operator" ||
+        preTypes === "result"
+      ) {
         display.innerHTML = keyContent;
       } else {
         display.innerHTML = displayedNum + keyContent;
@@ -30,10 +35,17 @@ keys.addEventListener("click", (e) => {
       action === "multiply" ||
       action === "divide"
     ) {
-      preTypes = "operator";
-      num1 = displayedNum;
-      operator = action;
-      display.innerHTML = keyContent;
+      if (operator === undefined) {
+        preTypes = "operator";
+        num1 = displayedNum;
+        operator = action;
+        display.innerHTML = keyContent;
+      } else {
+        num1 = calculate(num1, operator, displayedNum);
+        preTypes = "operator";
+        operator = action;
+        display.innerHTML = keyContent;
+      }
     }
 
     if (action === "decimal") {
@@ -51,13 +63,13 @@ keys.addEventListener("click", (e) => {
     }
     // handle calculations
     if (action === "calculate") {
-      const num2 = displayedNum;
+      num2 = displayedNum;
       if (num1 != undefined && operator != undefined) {
         display.innerHTML = calculate(num1, operator, num2);
-        preTypes = "result" 
-        operator = undefined
-      } else if(operator == undefined){
-        preTypes = "result"
+        preTypes = "result";
+        operator = undefined;
+      } else if (operator == undefined) {
+        preTypes = "result";
       }
     }
   }
